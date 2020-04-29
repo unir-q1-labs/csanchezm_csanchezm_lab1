@@ -39,7 +39,7 @@
           <dmndi:StrokeColor red="0" green="0" blue="0"/>
           <dmndi:FontColor red="0" green="0" blue="0"/>
         </dmndi:DMNStyle>
-        <dc:Bounds x="696" y="257" width="100" height="50"/>
+        <dc:Bounds x="687" y="229" width="100" height="50"/>
         <dmndi:DMNLabel/>
       </dmndi:DMNShape>
       <dmndi:DMNShape id="dmnshape-_B07F7378-50D7-46BB-8A6F-CFCB358C1400" dmnElementRef="_B07F7378-50D7-46BB-8A6F-CFCB358C1400" isCollapsed="false">
@@ -56,7 +56,7 @@
         <di:waypoint x="608" y="154"/>
       </dmndi:DMNEdge>
       <dmndi:DMNEdge id="dmnedge-_F8053185-A342-465B-96CB-2F10EFEF29CE" dmnElementRef="_F8053185-A342-465B-96CB-2F10EFEF29CE">
-        <di:waypoint x="746" y="257"/>
+        <di:waypoint x="737" y="229"/>
         <di:waypoint x="608" y="154"/>
       </dmndi:DMNEdge>
     </dmndi:DMNDiagram>
