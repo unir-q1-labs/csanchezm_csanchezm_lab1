@@ -35,16 +35,14 @@
     <dmn:itemComponent id="_5EE4B615-4AF5-4911-99A6-8C5027B02D18" name="Actual Stpeed" isCollection="false"/>
   </dmn:itemDefinition>
   <dmn:itemDefinition id="_755598F7-BB82-437A-9510-AD0FF0ADFF5E" name="tFine" isCollection="false">
-    <dmn:itemComponent id="_B4E02C70-F350-4695-9F16-C0D1B73F2057" name="Amount" isCollection="false">
-      <dmn:typeRef>number</dmn:typeRef>
-    </dmn:itemComponent>
+    <dmn:itemComponent id="_B4E02C70-F350-4695-9F16-C0D1B73F2057" name="Amount" isCollection="false"/>
     <dmn:itemComponent id="_45B9180A-8386-4557-9208-A7B0687D92F6" name="Points" isCollection="false">
       <dmn:typeRef>number</dmn:typeRef>
     </dmn:itemComponent>
   </dmn:itemDefinition>
   <dmn:inputData id="_404ED008-ADA2-45F9-B08A-7F5C900D3020" name="Violation">
     <dmn:extensionElements/>
-    <dmn:variable id="_995DDF2A-C645-474C-94DD-43DECCD48A27" name="Violation" typeRef="tViolation"/>
+    <dmn:variable id="_995DDF2A-C645-474C-94DD-43DECCD48A27" name="Violation"/>
   </dmn:inputData>
   <dmn:decision id="_CEAC63A0-9F93-4F4C-8AC7-0171BBEACB1D" name="Should the driver be suspended?">
     <dmn:extensionElements/>
@@ -64,6 +62,76 @@
     <dmn:informationRequirement id="_AE4FF812-3730-40E0-82F9-904422145C14">
       <dmn:requiredInput href="#_404ED008-ADA2-45F9-B08A-7F5C900D3020"/>
     </dmn:informationRequirement>
+    <dmn:decisionTable id="_12CD99BA-6F16-421C-9510-245718C86E49" hitPolicy="UNIQUE" preferredOrientation="Rule-as-Row">
+      <dmn:input id="_D58680B7-6A04-46EE-9C80-DA7441980532">
+        <dmn:inputExpression id="_D971681D-4D2F-43F2-9BA1-9C445C05FC6B" typeRef="string">
+          <dmn:text>Violation.Type</dmn:text>
+        </dmn:inputExpression>
+      </dmn:input>
+      <dmn:input id="_F879F6B5-0CA3-4BF9-ADA4-319F587C8DCC">
+        <dmn:inputExpression id="_9C4C64E4-3CB9-40E5-A59B-A2D991531D06" typeRef="number">
+          <dmn:text>Violation.Actual Stpeed - Violation.Limit Stpeed</dmn:text>
+        </dmn:inputExpression>
+      </dmn:input>
+      <dmn:output id="_10FFA3EE-8060-40DD-8462-88B07D6733C9" name="Amount" typeRef="number"/>
+      <dmn:output id="_3C5C6339-A99B-422D-8FA8-2832A7DC4A3B" name="Points" typeRef="number"/>
+      <dmn:rule id="_4CE2F4F0-1E05-4A7E-AC7F-6C2F82D8AE53">
+        <dmn:inputEntry id="_DD9F4DD3-9CB2-47C8-9FD5-4002ACECB681">
+          <dmn:text>"speed"</dmn:text>
+        </dmn:inputEntry>
+        <dmn:inputEntry id="_7C776EF4-CF4E-4EAD-A4BC-0CB503521A1D">
+          <dmn:text>[10..30)</dmn:text>
+        </dmn:inputEntry>
+        <dmn:outputEntry id="_D4109F41-4F19-4AA3-8CBA-9C11EB630A2E">
+          <dmn:text>500</dmn:text>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_1DEEA3BB-D9AA-48F8-9F30-A1E74BAC0F5A">
+          <dmn:text>3</dmn:text>
+        </dmn:outputEntry>
+      </dmn:rule>
+      <dmn:rule id="_8A4C8AEA-A5E2-4CB6-ADD7-D9C0997FC384">
+        <dmn:inputEntry id="_98D3DA2F-CB8C-44C3-A206-F14A360BF78A">
+          <dmn:text>"speed"</dmn:text>
+        </dmn:inputEntry>
+        <dmn:inputEntry id="_419D946E-8C35-4608-86D4-788580417EA7">
+          <dmn:text>-</dmn:text>
+        </dmn:inputEntry>
+        <dmn:outputEntry id="_D0E11C72-62C3-4D54-841D-8688BDE2CBD6">
+          <dmn:text>1000</dmn:text>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_F93A92D0-670F-4552-B1A9-743D8453AC50">
+          <dmn:text>7</dmn:text>
+        </dmn:outputEntry>
+      </dmn:rule>
+      <dmn:rule id="_DAB39216-AFB6-4805-BFC1-8B0055CECA3D">
+        <dmn:inputEntry id="_C3902998-C21A-4614-BDC8-5F93FB926940">
+          <dmn:text>"parking"</dmn:text>
+        </dmn:inputEntry>
+        <dmn:inputEntry id="_9FC6BC61-CD08-4A3A-B64F-5775DF02F84F">
+          <dmn:text>&gt;= 30</dmn:text>
+        </dmn:inputEntry>
+        <dmn:outputEntry id="_5859CF6C-321C-4AE4-9DD8-22C90D3A80B9">
+          <dmn:text>100</dmn:text>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_C83178FF-05D8-45F4-8E17-DF3804112157">
+          <dmn:text>1</dmn:text>
+        </dmn:outputEntry>
+      </dmn:rule>
+      <dmn:rule id="_F19E3316-041E-4D70-81D7-7BFC081776C1">
+        <dmn:inputEntry id="_F752B375-A9ED-47B3-A49E-B8ABFD4EEBA2">
+          <dmn:text>"driving under the influence"</dmn:text>
+        </dmn:inputEntry>
+        <dmn:inputEntry id="_328912A1-48FE-4BBD-AB28-0C2C4ED52768">
+          <dmn:text>-</dmn:text>
+        </dmn:inputEntry>
+        <dmn:outputEntry id="_8A15BA36-9166-4D9C-89FD-28594C5FF6EA">
+          <dmn:text>1000</dmn:text>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_A7DF8AD1-CA13-4B95-A72E-E626DFD9C635">
+          <dmn:text>5</dmn:text>
+        </dmn:outputEntry>
+      </dmn:rule>
+    </dmn:decisionTable>
   </dmn:decision>
   <dmn:inputData id="_9B4AFF50-B5E1-461E-AE32-B086C5D16482" name="Driver">
     <dmn:extensionElements/>
@@ -72,7 +140,16 @@
   <dmndi:DMNDI>
     <dmndi:DMNDiagram>
       <di:extension>
-        <kie:ComponentsWidthsExtension/>
+        <kie:ComponentsWidthsExtension>
+          <kie:ComponentWidths dmnElementRef="_12CD99BA-6F16-421C-9510-245718C86E49">
+            <kie:width>50.0</kie:width>
+            <kie:width>100.0</kie:width>
+            <kie:width>100.0</kie:width>
+            <kie:width>100.0</kie:width>
+            <kie:width>100.0</kie:width>
+            <kie:width>793.0</kie:width>
+          </kie:ComponentWidths>
+        </kie:ComponentsWidthsExtension>
       </di:extension>
       <dmndi:DMNShape id="dmnshape-_404ED008-ADA2-45F9-B08A-7F5C900D3020" dmnElementRef="_404ED008-ADA2-45F9-B08A-7F5C900D3020" isCollapsed="false">
         <dmndi:DMNStyle>
