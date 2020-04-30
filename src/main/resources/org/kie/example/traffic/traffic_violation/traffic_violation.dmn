@@ -77,7 +77,7 @@
   </dmn:decision>
   <dmn:decision id="_6C4BE47A-4F42-4A1F-AEDF-A80E88920333" name="Fine">
     <dmn:extensionElements/>
-    <dmn:variable id="_BA15831C-893F-4FD2-B430-75BDC1210F23" name="Fine" typeRef="tFine"/>
+    <dmn:variable id="_BA15831C-893F-4FD2-B430-75BDC1210F23" name="Fine"/>
     <dmn:informationRequirement id="_AE4FF812-3730-40E0-82F9-904422145C14">
       <dmn:requiredInput href="#_404ED008-ADA2-45F9-B08A-7F5C900D3020"/>
     </dmn:informationRequirement>
