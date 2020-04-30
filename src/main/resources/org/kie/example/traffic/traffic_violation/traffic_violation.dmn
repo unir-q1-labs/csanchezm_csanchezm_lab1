@@ -32,10 +32,12 @@
     <dmn:itemComponent id="_8C33277A-57F2-42F1-8265-279B4DE9101B" name="Speed Limit" isCollection="false">
       <dmn:typeRef>number</dmn:typeRef>
     </dmn:itemComponent>
-    <dmn:itemComponent id="_5EE4B615-4AF5-4911-99A6-8C5027B02D18" name="Actual Stpeed" isCollection="false"/>
+    <dmn:itemComponent id="_5EE4B615-4AF5-4911-99A6-8C5027B02D18" name="Actual Speed" isCollection="false"/>
   </dmn:itemDefinition>
   <dmn:itemDefinition id="_755598F7-BB82-437A-9510-AD0FF0ADFF5E" name="tFine" isCollection="false">
-    <dmn:itemComponent id="_B4E02C70-F350-4695-9F16-C0D1B73F2057" name="Amount" isCollection="false"/>
+    <dmn:itemComponent id="_B4E02C70-F350-4695-9F16-C0D1B73F2057" name="Amount" isCollection="false">
+      <dmn:typeRef>number</dmn:typeRef>
+    </dmn:itemComponent>
     <dmn:itemComponent id="_45B9180A-8386-4557-9208-A7B0687D92F6" name="Points" isCollection="false">
       <dmn:typeRef>number</dmn:typeRef>
     </dmn:itemComponent>
