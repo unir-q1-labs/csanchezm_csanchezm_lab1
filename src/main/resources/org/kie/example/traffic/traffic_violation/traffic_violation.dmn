@@ -22,7 +22,9 @@
     <dmn:itemComponent id="_37A1868E-63EF-4981-AD17-4E96A0D86AED" name="Code" isCollection="false">
       <dmn:typeRef>string</dmn:typeRef>
     </dmn:itemComponent>
-    <dmn:itemComponent id="_CE5786A8-8C13-4C28-BB49-7F39C57C42EB" name="Date" isCollection="false"/>
+    <dmn:itemComponent id="_CE5786A8-8C13-4C28-BB49-7F39C57C42EB" name="Date" isCollection="false">
+      <dmn:typeRef>date</dmn:typeRef>
+    </dmn:itemComponent>
     <dmn:itemComponent id="_4E43C2B5-16D0-4947-BD43-8B8DC2062400" name="Type" isCollection="false">
       <dmn:typeRef>string</dmn:typeRef>
       <dmn:allowedValues kie:constraintType="enumeration" id="_151FE085-8AF1-4E95-B1E7-6C68CF597C06">
@@ -46,7 +48,7 @@
   </dmn:itemDefinition>
   <dmn:inputData id="_404ED008-ADA2-45F9-B08A-7F5C900D3020" name="Violation">
     <dmn:extensionElements/>
-    <dmn:variable id="_995DDF2A-C645-474C-94DD-43DECCD48A27" name="Violation" typeRef="tViolation"/>
+    <dmn:variable id="_995DDF2A-C645-474C-94DD-43DECCD48A27" name="Violation"/>
   </dmn:inputData>
   <dmn:decision id="_6C4BE47A-4F42-4A1F-AEDF-A80E88920333" name="Fine">
     <dmn:extensionElements/>
