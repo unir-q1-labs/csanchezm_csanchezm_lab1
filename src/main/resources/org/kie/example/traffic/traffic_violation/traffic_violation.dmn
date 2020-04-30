@@ -83,7 +83,7 @@
       </dmn:input>
       <dmn:input id="_F879F6B5-0CA3-4BF9-ADA4-319F587C8DCC">
         <dmn:inputExpression id="_9C4C64E4-3CB9-40E5-A59B-A2D991531D06" typeRef="number">
-          <dmn:text>Violation.Actual Stpeed - Violation.Limit Stpeed</dmn:text>
+          <dmn:text>Violation.Actual Speed - Violation.Speed Limit</dmn:text>
         </dmn:inputExpression>
       </dmn:input>
       <dmn:output id="_10FFA3EE-8060-40DD-8462-88B07D6733C9" name="Amount" typeRef="number"/>
@@ -107,7 +107,7 @@
           <dmn:text>"speed"</dmn:text>
         </dmn:inputEntry>
         <dmn:inputEntry id="_419D946E-8C35-4608-86D4-788580417EA7">
-          <dmn:text>-</dmn:text>
+          <dmn:text>&gt;= 30</dmn:text>
         </dmn:inputEntry>
         <dmn:outputEntry id="_D0E11C72-62C3-4D54-841D-8688BDE2CBD6">
           <dmn:text>1000</dmn:text>
@@ -121,7 +121,7 @@
           <dmn:text>"parking"</dmn:text>
         </dmn:inputEntry>
         <dmn:inputEntry id="_9FC6BC61-CD08-4A3A-B64F-5775DF02F84F">
-          <dmn:text>&gt;= 30</dmn:text>
+          <dmn:text>-</dmn:text>
         </dmn:inputEntry>
         <dmn:outputEntry id="_5859CF6C-321C-4AE4-9DD8-22C90D3A80B9">
           <dmn:text>100</dmn:text>
